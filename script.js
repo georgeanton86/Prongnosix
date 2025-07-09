@@ -1,19 +1,18 @@
+document.querySelector("button").addEventListener("click", async () => {
+  const input = document.querySelector("textarea").value;
+  const responseDiv = document.getElementById("response");
+  responseDiv.innerText = "Loading...";
 
-async function askProgno() {
-    const input = document.getElementById("user-input").value;
-    const responseBox = document.getElementById("response");
-    responseBox.textContent = "Thinking...";
+  try {
+    const response = await fetch("/api/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: input }),
+    });
 
-    try {
-        const res = await fetch("/api/ask", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ prompt: input })
-        });
-
-        const data = await res.json();
-        responseBox.textContent = data.result || "No result.";
-    } catch (err) {
-        responseBox.textContent = "Error: " + err.message;
-    }
-}
+    const data = await response.json();
+    responseDiv.innerText = data.reply;
+  } catch (err) {
+    responseDiv.innerText = "Error: " + err.message;
+  }
+});
