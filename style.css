@@ -1,0 +1,22 @@
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 2em;
+    background-color: #f9f9f9;
+}
+textarea {
+    width: 90%;
+    font-size: 1em;
+}
+button {
+    margin-top: 1em;
+    font-size: 1em;
+    padding: 0.5em 2em;
+}
+pre {
+    margin-top: 2em;
+    text-align: left;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
