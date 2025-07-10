@@ -1,16 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PrognoSX Assistant</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <title>PrognoSX Assistant</title>
 </head>
 <body>
-  <h1>Hello, Progno</h1>
-  <textarea placeholder="Enter patient case..."></textarea>
-  <button>Ask</button>
-  <div id="response"></div>
-  <script src="script.js"></script>
+    <h1>Hello, Progno</h1>
+    <textarea id="input" rows="4" cols="50">John is a 62-year-old male with right leg pain</textarea><br>
+    <button onclick="askProgno()">Ask</button>
+    <pre id="output"></pre>
+    <script src="script.js"></script>
 </body>
 </html>
